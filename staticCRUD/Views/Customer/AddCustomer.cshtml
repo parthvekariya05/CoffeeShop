@@ -1,0 +1,73 @@
+﻿ @model CustomerModel
+<form asp-controller="Customer" asp-action="Save">
+    <div class="container">
+        <h3 class="text-center text-primary text-decoration-underline fw-bold">Customer Form</h3>
+        <div class="form-group">
+            <input asp-for="CustomerID" class="form-control col" type="hidden" />
+
+            <label>Customer Name<span class="text-danger">*</span></label>
+            <input type="text" class="form-control" asp-for="CustomerName" name="CustomerName" placeholder="Enter Customer Name"/>
+            <span asp-validation-for="CustomerName" class="text-danger"></span>
+
+            <br />
+
+            <label>Home Address<span class="text-danger">*</span> </label>
+            <textarea class="form-control" asp-for="HomeAddress" name="HomeAddress" placeholder="Enter Home Address"></textarea>            
+            <span asp-validation-for="HomeAddress" class="text-danger"></span>
+
+            <br />
+
+            <label>Email<span class="text-danger">*</span></label>
+            <input type="text" class="form-control" asp-for="Email" name="Email" placeholder="Enter email"/>
+            <span asp-validation-for="Email" class="text-danger"></span>
+
+            <br />
+
+            <label>MobilePhone<span class="text-danger">*</span></label>
+            <input type="text" class="form-control" asp-for="MobileNo" name="MobileNo" placeholder="Enter Mobile No."/>
+            <span asp-validation-for="MobileNo" class="text-danger"></span>
+
+            <br />
+
+            <label>GST NO<span class="text-danger">*</span></label>
+            <input type="text" class="form-control" asp-for="GSTNO" name="GSTNO" placeholder="Enter GST No."/>
+            <span asp-validation-for="GSTNO" class="text-danger"></span>
+
+            <br />
+            <label>City Name<span class="text-danger">*</span></label>
+            <input type="text" class="form-control" asp-for="CityName" name="CityName" placeholder="Enter City Name"/>
+            <span asp-validation-for="NetAmount" class="text-danger"></span>
+
+            <br />
+            <label>PinCode<span class="text-danger">*</span></label>
+            <input type="text" class="form-control" asp-for="PinCode" name="PinCode" placeholder="Enter Pincode"/>
+            <span asp-validation-for="PinCode" class="text-danger"></span>
+
+            <br />
+            <label>NetAmount<span class="text-danger">*</span></label>
+            <input type="text" class="form-control" asp-for="NetAmount" name="NetAmount" placeholder="Enter NetAmount"/>
+            <span asp-validation-for="NetAmount" class="text-danger"></span>
+
+            <br />
+
+            <label class="col-2" asp-for="UserID">User Name<span class="text-danger">*</span></label>
+            <select class="form-control col" asp-for="UserID" asp-items="@(new SelectList(ViewBag.UserList, "UserID", "UserName"))">
+                <option value="" selected disabled>Select User</option>
+            </select>
+            <span asp-validation-for="UserID" class="text-danger"></span>
+
+            <br />
+
+
+
+
+            <a class="btn btn-secondary" asp-controller="Customer" asp-action="Customer">Back</a>
+            <button class="btn btn-primary ms-3 ">Submit</button>
+        </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

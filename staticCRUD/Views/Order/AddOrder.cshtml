@@ -1,0 +1,70 @@
+﻿ @model OrderModel
+
+<form method="post" asp-controller="Order" asp-action="Save">
+    <div class="container">
+        <h3 class="text-center text-primary text-decoration-underline fw-bold">Order Form</h3>
+        <div class="form-group">
+            <input asp-for="OrderID" class="form-control col" type="hidden" />
+
+            <label>OrderNumber<span class="text-danger">*</span></label>
+            <input type="text" class="form-control" asp-for="OrderNumber" name="OrderNumber" placeholder="Enter Order Number" />
+            <span asp-validation-for="OrderNumber" class="text-danger"></span>
+
+            <br />
+
+            <label>OrderDate<span class="text-danger">*</span></label>
+            <input type="date" class="form-control" asp-for="OrderDate" name="OrderDate"/>
+            <span asp-validation-for="OrderDate" class="text-danger"></span>
+
+            <br />
+          
+            <label class="col-2" asp-for="CustomerID">Customer Name<span class="text-danger">*</span></label>
+            <select class="form-control col" asp-for="CustomerID" asp-items="@(new SelectList(ViewBag.CustomerList, "CustomerID", "CustomerName"))">
+                <option value="" selected disabled>Select Customer</option>
+            </select>
+            <span asp-validation-for="CustomerID" class="text-danger"></span>
+            <br />           
+
+            <label class="col-2" asp-for="PaymentMode">Select Payment<span class="text-danger">*</span></label>
+            <select id="paymentMode" class="form-control col" name="paymentMode">
+                <option value="" selected disabled>Select Payment Method</option>
+                <option value="creditCard">Credit Card</option>
+                <option value="debitCard">Debit Card</option>                                
+                <option value="cash">Cash</option>
+                <option value="upi">UPI</option>
+            </select>         
+
+            <br />
+
+            <label>Total Amount<span class="text-danger">*</span></label>
+            <input type="text" class="form-control" asp-for="TotalAmount" name="TotalAmount" placeholder="Enter Order Total Amount" />
+            <span asp-validation-for="TotalAmount" class="text-danger"></span>
+
+            <br />
+
+            <label>Shipping Address<span class="text-danger">*</span></label>
+            <textarea class="form-control" asp-for="ShippingAddress" name="ShippingAddress" placeholder="Enter Order Shipping Address"></textarea>        
+            <span asp-validation-for="ShippingAddress" class="text-danger"></span>
+
+            <br />
+
+
+            <label class="col-2" asp-for="UserID">User Name<span class="text-danger">*</span></label>
+            <select class="form-control col" asp-for="UserID" asp-items="@(new SelectList(ViewBag.UserList, "UserID", "UserName"))">
+                <option value="" selected disabled>Select User</option>
+            </select>
+            <span asp-validation-for="UserID" class="text-danger"></span>
+
+            <br />
+            <a class="btn btn-secondary" asp-controller="Order" asp-action="Order">Back</a>
+            <button class="btn btn-primary ms-3 ">Submit</button>
+        </div>
+        </
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

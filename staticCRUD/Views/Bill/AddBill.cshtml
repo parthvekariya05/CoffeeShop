@@ -1,0 +1,60 @@
+﻿ @model BillModel
+
+<form asp-controller="Bill" asp-action="Save">
+    <div class="container">
+        <h3 class="text-center text-primary text-decoration-underline fw-bold">Bill Form</h3>
+        <div class="form-group">
+            <input asp-for="BillID" class="form-control col" type="hidden" />
+            <label>Bill Number<span class="text-danger">*</span></label>
+            <input type="text" class="form-control" asp-for="BillNumber" name="BillNumber" />
+            <span asp-validation-for="BillNumber" class="text-danger"></span>
+            <br />
+
+            <label>Bill Date<span class="text-danger">*</span> </label>
+            <input type="date" class="form-control" asp-for="BillDate" name="BillDate" />
+            <span asp-validation-for="BillDate" class="text-danger"></span>
+            <br />
+
+
+            <label class="col-2" asp-for="OrderID">Order Name<span class="text-danger">*</span></label>
+            <select class="form-control col" asp-for="OrderID" asp-items="@(new SelectList(ViewBag.OrderList, "OrderID", "OrderNumber"))">
+                <option value="" selected disabled>Select Order</option>
+            </select>
+            <span asp-validation-for="OrderID" class="text-danger"></span>
+            <br />
+
+            <label>TotalAmount<span class="text-danger">*</span></label>
+            <input type="text" class="form-control" asp-for="TotalAmount" name="TotalAmount" />
+            <span asp-validation-for="TotalAmount" class="text-danger"></span>
+
+            <br />
+
+            <label>Discount<span class="text-danger">*</span></label>
+            <input type="text" class="form-control" asp-for="Discount" name="Discount" />
+            <span asp-validation-for="Discount" class="text-danger"></span>
+
+            <br />
+            <label>NetAmount<span class="text-danger">*</span></label>
+            <input type="text" class="form-control" asp-for="NetAmount" name="NetAmount" />
+            <span asp-validation-for="NetAmount" class="text-danger"></span>
+
+            <br />
+
+            <label class="col-2" asp-for="UserID">User Name<span class="text-danger">*</span></label>
+            <select class="form-control col" asp-for="UserID" asp-items="@(new SelectList(ViewBag.UserList, "UserID", "UserName"))">
+                <option value="" selected disabled>Select User</option>
+            </select>
+            <span asp-validation-for="UserID" class="text-danger"></span>
+            <br />
+
+            <a class="btn btn-secondary" asp-controller="Bill" asp-action="Bill">Back</a>
+            <button class="btn btn-primary ms-3 ">Submit</button>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

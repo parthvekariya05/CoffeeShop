@@ -1,0 +1,60 @@
+﻿@model DataTable
+@using System.Data
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+    *@
+@{
+}
+<!-- Primary Color Bordered Table -->
+<!-- Table with hoverable rows -->
+<!-- Table with hoverable rows -->
+<table class="table table-hover">
+    <thead>
+        <h3 class="text-dark fw-bold">Order List</h3>
+        <a class="btn btn-primary float-end" asp-controller="Order" asp-action="AddOrder">Add Order</a>
+        <tr>
+            @* <th scope="col">OrderID</th> *@
+            <th scope="col">Order No.</th>
+            <th scope="col">Order Date</th>
+            @* <th>CustomerID</th> *@
+            <th>Customer Name</th>
+            <th scope="col">PaymentMode</th>
+            <th scope="col">Total Amount</th>
+            <th scope="col">Shipping Address</th>
+            <th>User Name</th>
+            <th class="text-center" scope="col" colspan="2">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (DataRow dataRow in Model.Rows)
+        {
+            <tr>
+                @* <td>@dataRow["OrderID"]</td> *@
+                <td>@dataRow["OrderNumber"]</td>
+                <td>@dataRow["OrderDate"]</td>
+                <td>@dataRow["CustomerName"]</td>
+                <td>@dataRow["PaymentMode"]</td>
+                <td>@dataRow["TotalAmount"]</td>
+                <td>@dataRow["ShippingAddress"]</td>                
+                <td>@dataRow["UserName"]</td>
+                <td><a asp-controller="Order" asp-action="AddOrder" asp-route-OrderID="@dataRow["OrderID"]" class="btn btn-outline-warning btn-xs  bi bi-pencil"></a></td>
+                <td>
+                    <form method="post" asp-controller="Order" asp-action="DeleteOrder">
+                        <input type="hidden" name="OrderID" value="@dataRow["OrderID"]" />
+                        <button onclick="return confirm('Sure Delete??')" type="submit" class="btn btn-outline-danger btn-xs">
+                            <i class="bi bi-x"></i>
+                        </button>
+                    </form>
+                </td>
+
+            </tr>
+        }
+       
+          
+       
+    </tbody>
+</table>
+<!-- End Table with hoverable rows -->
+<!-- End Table with hoverable rows -->
+<!-- End Primary Color Bordered Table -->

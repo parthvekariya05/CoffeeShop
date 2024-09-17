@@ -1,0 +1,50 @@
+﻿@model DataTable
+@using System.Data
+
+<table class="table table-hover">
+    <thead>
+        <h3 class="text-dark fw-bold">Order Detail List</h3>
+        <a class="btn btn-primary  float-end" asp-controller="OrderDetail" asp-action="AddOrderDetail">Add Order Detail</a>
+        <tr>
+            @* <th scope="col">OrderDetailID</th> *@
+            <th scope="col">Order Number</th>
+            @* <th scope="col">ProductID</th> *@
+            <th scope="col">Product Name</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Total Amount</th>
+            <th scope="col">User Name</th>
+            <th class="text-center" scope="col" colspan="2">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (DataRow dataRow in Model.Rows) 
+        {
+            <tr>
+                @* <td>@dataRow["OrderDetailID"]</td> *@
+                <td>@dataRow["OrderNumber"]</td>
+                 <td>@dataRow["ProductName"]</td>
+                 <td>@dataRow["Quantity"]</td>
+                <td>@dataRow["Amount"]</td>
+                <td>@dataRow["TotalAmount"]</td>
+                <td>@dataRow["UserName"]</td>
+                <td><a asp-controller="OrderDetail" asp-action="AddOrderDetail" asp-route-OrderDetailID="@dataRow["OrderDetailID"]" class="btn btn-outline-warning btn-xs  bi bi-pencil"></a></td>
+                <td>
+                    <form method="post" asp-controller="OrderDetail" asp-action="DeleteOrderDetail">
+                        <input type="hidden" name="OrderDetailID" value="@dataRow["OrderDetailID"]" />
+                        <button onclick="return confirm('Sure Delete??')" type="submit" class="btn btn-outline-danger btn-xs">
+                            <i class="bi bi-x"></i>
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        }
+        
+          
+    </tbody>
+</table>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

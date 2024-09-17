@@ -1,0 +1,45 @@
+﻿@model ProductModel
+
+<form method="post" asp-controller="Product" asp-action="Save">
+    <div class="container">
+        <h3 class="text-center text-primary text-decoration-underline fw-bold">Product Form</h3>
+        <input asp-for="ProductID" class="form-control col" type="hidden" />
+        <div class="form-group ">
+            <label class="col-2" asp-for="ProductName">Product Name<span class="text-danger">*</span></label>
+            <input asp-for="ProductName" class="form-control col" placeholder="Enter Product Name"/>
+            <span asp-validation-for="ProductName" class="text-danger"></span>
+
+            <br />
+            <label class="col-2" asp-for="ProductPrice">Product Price<span class="text-danger">*</span></label>
+            <input asp-for="ProductPrice" class="form-control col" placeholder="Enter Product Price" />
+            <span asp-validation-for="ProductPrice" class="text-danger"></span>
+
+            <br />
+            <label class="col-2" asp-for="ProductCode">Product Code<span class="text-danger">*</span></label>
+            <input asp-for="ProductCode" class="form-control col" placeholder="Enter Product Code" />
+            <span asp-validation-for="ProductCode" class="text-danger"></span>
+
+            <br />
+            <label class="col-2" asp-for="Description">Description<span class="text-danger">*</span></label>
+            <input asp-for="Description" class="form-control col" placeholder="Enter Product Description" />
+            <span asp-validation-for="Description" class="text-danger"></span>
+
+            <br />
+            <label class="col-2" asp-for="UserID">User Name<span class="text-danger">*</span></label>
+            <select class="form-control col" asp-for="UserID" asp-items="@(new SelectList(ViewBag.UserList, "UserID", "UserName"))">
+                <option value="" selected disabled>Select User</option>
+            </select>
+            <span asp-validation-for="UserID" class="text-danger"></span>
+
+            <br />
+            <a class="btn btn-secondary" asp-controller="Product" asp-action="ProductList">Back</a>
+            <button type="submit" class="btn btn-primary  ms-3">Submit</button>
+        </div>
+   </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,71 @@
+﻿@model OrderDetailModel
+
+<form method="post" asp-controller="OrderDetail" asp-action="Save">
+    <div class="container">
+        <h3 class="text-center text-primary text-decoration-underline fw-bold">Order Detail Form</h3>
+        <div class="form-group">
+            
+            <input asp-for="OrderDetailID" class="form-control col" type="hidden" />
+
+            <div class="form-group">
+                <label>Order Number<span class="text-danger">*</span></label>
+                <div class="dropdown">
+                    <select class="form-control" asp-for="OrderID" asp-items="@(new SelectList(ViewBag.OrderList, "OrderID","OrderNumber"))">
+                        <option value="">Select Order</option>
+                    </select>
+                </div>
+                <span asp-validation-for="OrderID" class="text-danger"></span>
+                <br />
+            </div>
+
+            <div class="form-group">
+                <label>Product Name<span class="text-danger">*</span></label>
+                <div class="dropdown">
+                    <select class="form-control" asp-for="ProductID" asp-items="@(new SelectList(ViewBag.ProductList, "ProductID", "ProductName"))">
+                        <option value="">Select Product</option>
+                    </select>
+                </div>
+                <span asp-validation-for="ProductID" class="text-danger"></span>
+                <br />
+            </div>
+
+
+            <label>Quantity<span class="text-danger">*</span></label>
+            <input type="text" class="form-control" asp-for="Quantity" name="Quantity" placeholder="Enter Order Quntity" />
+            <span asp-validation-for="Quantity" class="text-danger"></span>
+
+            <br />
+
+            <label>Amount<span class="text-danger">*</span></label>
+            <input type="text" class="form-control" asp-for="Amount" name="Amount" placeholder="Enter Amount"/>
+            <span asp-validation-for="Amount" class="text-danger"></span>
+
+            <br />
+
+            <label>TotalAmount<span class="text-danger">*</span></label>
+            <input type="text" class="form-control" asp-for="TotalAmount" name="TotalAmount" placeholder="Enter Total Amount" />
+            <span asp-validation-for="TotalAmount" class="text-danger"></span>
+
+            <br />
+            
+                <label class="col-2" asp-for="UserID">User Name<span class="text-danger">*</span></label>
+                <br />
+                <select class="form-control col" asp-for="UserID" asp-items="@(new SelectList(ViewBag.UserList, "UserID", "UserName"))">
+                    <option value="" selected disabled>Select User</option>
+                </select>              
+                <span asp-validation-for="UserID" class="text-danger"></span>
+            
+            <br />
+
+            <a class="btn btn-secondary" asp-controller="OrderDetail" asp-action="OrderDetail">Back</a>
+            <button class="btn btn-primary ms-3 ">Submit</button>
+        </div>
+
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
