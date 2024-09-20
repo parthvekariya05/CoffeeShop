@@ -16,7 +16,7 @@
             <br />
 
 
-            <label class="col-2" asp-for="OrderID">Order vale Name<span class="text-danger">*</span></label>
+            <label class="col-2" asp-for="OrderID">Order  Name<span class="text-danger">*</span></label>
             <select class="form-control col" asp-for="OrderID" asp-items="@(new SelectList(ViewBag.OrderList, "OrderID", "OrderNumber"))">
                 <option value="" selected disabled>Select Order</option>
             </select>

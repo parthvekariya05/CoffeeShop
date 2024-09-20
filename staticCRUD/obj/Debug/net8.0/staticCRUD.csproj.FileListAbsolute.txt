@@ -37,3 +37,42 @@ E:\Study\Sem-5\.NET\staticCRUD\staticCRUD\bin\Debug\net8.0\runtimes\win\lib\netc
 E:\Study\Sem-5\.NET\staticCRUD\staticCRUD\obj\Debug\net8.0\staticCRUD.csproj.AssemblyReference.cache
 E:\Study\Sem-5\.NET\staticCRUD\staticCRUD\obj\Debug\net8.0\staticCRUD.csproj.Up2Date
 E:\Study\Sem-5\.NET\staticCRUD\staticCRUD\obj\Debug\net8.0\staticCRUD.sourcelink.json
+E:\Study\Sem-5\.NET\Coffe Shop CRUD\staticCRUD\bin\Debug\net8.0\appsettings.Development.json
+E:\Study\Sem-5\.NET\Coffe Shop CRUD\staticCRUD\bin\Debug\net8.0\appsettings.json
+E:\Study\Sem-5\.NET\Coffe Shop CRUD\staticCRUD\bin\Debug\net8.0\staticCRUD.staticwebassets.runtime.json
+E:\Study\Sem-5\.NET\Coffe Shop CRUD\staticCRUD\bin\Debug\net8.0\staticCRUD.exe
+E:\Study\Sem-5\.NET\Coffe Shop CRUD\staticCRUD\bin\Debug\net8.0\staticCRUD.deps.json
+E:\Study\Sem-5\.NET\Coffe Shop CRUD\staticCRUD\bin\Debug\net8.0\staticCRUD.runtimeconfig.json
+E:\Study\Sem-5\.NET\Coffe Shop CRUD\staticCRUD\bin\Debug\net8.0\staticCRUD.dll
+E:\Study\Sem-5\.NET\Coffe Shop CRUD\staticCRUD\bin\Debug\net8.0\staticCRUD.pdb
+E:\Study\Sem-5\.NET\Coffe Shop CRUD\staticCRUD\bin\Debug\net8.0\System.Data.SqlClient.dll
+E:\Study\Sem-5\.NET\Coffe Shop CRUD\staticCRUD\bin\Debug\net8.0\runtimes\win-arm64\native\sni.dll
+E:\Study\Sem-5\.NET\Coffe Shop CRUD\staticCRUD\bin\Debug\net8.0\runtimes\win-x64\native\sni.dll
+E:\Study\Sem-5\.NET\Coffe Shop CRUD\staticCRUD\bin\Debug\net8.0\runtimes\win-x86\native\sni.dll
+E:\Study\Sem-5\.NET\Coffe Shop CRUD\staticCRUD\bin\Debug\net8.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+E:\Study\Sem-5\.NET\Coffe Shop CRUD\staticCRUD\bin\Debug\net8.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+E:\Study\Sem-5\.NET\Coffe Shop CRUD\staticCRUD\obj\Debug\net8.0\staticCRUD.csproj.AssemblyReference.cache
+E:\Study\Sem-5\.NET\Coffe Shop CRUD\staticCRUD\obj\Debug\net8.0\staticCRUD.GeneratedMSBuildEditorConfig.editorconfig
+E:\Study\Sem-5\.NET\Coffe Shop CRUD\staticCRUD\obj\Debug\net8.0\staticCRUD.AssemblyInfoInputs.cache
+E:\Study\Sem-5\.NET\Coffe Shop CRUD\staticCRUD\obj\Debug\net8.0\staticCRUD.AssemblyInfo.cs
+E:\Study\Sem-5\.NET\Coffe Shop CRUD\staticCRUD\obj\Debug\net8.0\staticCRUD.csproj.CoreCompileInputs.cache
+E:\Study\Sem-5\.NET\Coffe Shop CRUD\staticCRUD\obj\Debug\net8.0\staticCRUD.MvcApplicationPartsAssemblyInfo.cache
+E:\Study\Sem-5\.NET\Coffe Shop CRUD\staticCRUD\obj\Debug\net8.0\staticCRUD.RazorAssemblyInfo.cache
+E:\Study\Sem-5\.NET\Coffe Shop CRUD\staticCRUD\obj\Debug\net8.0\staticCRUD.RazorAssemblyInfo.cs
+E:\Study\Sem-5\.NET\Coffe Shop CRUD\staticCRUD\obj\Debug\net8.0\staticCRUD.sourcelink.json
+E:\Study\Sem-5\.NET\Coffe Shop CRUD\staticCRUD\obj\Debug\net8.0\staticwebassets.build.json
+E:\Study\Sem-5\.NET\Coffe Shop CRUD\staticCRUD\obj\Debug\net8.0\staticwebassets.development.json
+E:\Study\Sem-5\.NET\Coffe Shop CRUD\staticCRUD\obj\Debug\net8.0\staticwebassets\msbuild.staticCRUD.Microsoft.AspNetCore.StaticWebAssets.props
+E:\Study\Sem-5\.NET\Coffe Shop CRUD\staticCRUD\obj\Debug\net8.0\staticwebassets\msbuild.build.staticCRUD.props
+E:\Study\Sem-5\.NET\Coffe Shop CRUD\staticCRUD\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.staticCRUD.props
+E:\Study\Sem-5\.NET\Coffe Shop CRUD\staticCRUD\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.staticCRUD.props
+E:\Study\Sem-5\.NET\Coffe Shop CRUD\staticCRUD\obj\Debug\net8.0\staticwebassets.pack.json
+E:\Study\Sem-5\.NET\Coffe Shop CRUD\staticCRUD\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+E:\Study\Sem-5\.NET\Coffe Shop CRUD\staticCRUD\obj\Debug\net8.0\scopedcss\bundle\staticCRUD.styles.css
+E:\Study\Sem-5\.NET\Coffe Shop CRUD\staticCRUD\obj\Debug\net8.0\scopedcss\projectbundle\staticCRUD.bundle.scp.css
+E:\Study\Sem-5\.NET\Coffe Shop CRUD\staticCRUD\obj\Debug\net8.0\staticCRUD.csproj.Up2Date
+E:\Study\Sem-5\.NET\Coffe Shop CRUD\staticCRUD\obj\Debug\net8.0\staticCRUD.dll
+E:\Study\Sem-5\.NET\Coffe Shop CRUD\staticCRUD\obj\Debug\net8.0\refint\staticCRUD.dll
+E:\Study\Sem-5\.NET\Coffe Shop CRUD\staticCRUD\obj\Debug\net8.0\staticCRUD.pdb
+E:\Study\Sem-5\.NET\Coffe Shop CRUD\staticCRUD\obj\Debug\net8.0\staticCRUD.genruntimeconfig.cache
+E:\Study\Sem-5\.NET\Coffe Shop CRUD\staticCRUD\obj\Debug\net8.0\ref\staticCRUD.dll

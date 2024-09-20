@@ -6,6 +6,7 @@ using System.Diagnostics;
 
 namespace staticCRUD.Controllers
 {
+    [CheckAccess]
     public class HomeController : Controller
     {
        

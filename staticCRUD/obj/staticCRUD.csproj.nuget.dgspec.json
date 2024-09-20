@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Study\\Sem-5\\.NET\\staticCRUD\\staticCRUD\\staticCRUD.csproj": {}
+    "E:\\Study\\Sem-5\\.NET\\Coffe Shop CRUD\\staticCRUD\\staticCRUD.csproj": {}
   },
   "projects": {
-    "E:\\Study\\Sem-5\\.NET\\staticCRUD\\staticCRUD\\staticCRUD.csproj": {
+    "E:\\Study\\Sem-5\\.NET\\Coffe Shop CRUD\\staticCRUD\\staticCRUD.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Study\\Sem-5\\.NET\\staticCRUD\\staticCRUD\\staticCRUD.csproj",
+        "projectUniqueName": "E:\\Study\\Sem-5\\.NET\\Coffe Shop CRUD\\staticCRUD\\staticCRUD.csproj",
         "projectName": "staticCRUD",
-        "projectPath": "E:\\Study\\Sem-5\\.NET\\staticCRUD\\staticCRUD\\staticCRUD.csproj",
+        "projectPath": "E:\\Study\\Sem-5\\.NET\\Coffe Shop CRUD\\staticCRUD\\staticCRUD.csproj",
         "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "E:\\Study\\Sem-5\\.NET\\staticCRUD\\staticCRUD\\obj\\",
+        "outputPath": "E:\\Study\\Sem-5\\.NET\\Coffe Shop CRUD\\staticCRUD\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",

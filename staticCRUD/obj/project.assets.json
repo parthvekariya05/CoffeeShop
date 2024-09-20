@@ -475,11 +475,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Study\\Sem-5\\.NET\\staticCRUD\\staticCRUD\\staticCRUD.csproj",
+      "projectUniqueName": "E:\\Study\\Sem-5\\.NET\\Coffe Shop CRUD\\staticCRUD\\staticCRUD.csproj",
       "projectName": "staticCRUD",
-      "projectPath": "E:\\Study\\Sem-5\\.NET\\staticCRUD\\staticCRUD\\staticCRUD.csproj",
+      "projectPath": "E:\\Study\\Sem-5\\.NET\\Coffe Shop CRUD\\staticCRUD\\staticCRUD.csproj",
       "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-      "outputPath": "E:\\Study\\Sem-5\\.NET\\staticCRUD\\staticCRUD\\obj\\",
+      "outputPath": "E:\\Study\\Sem-5\\.NET\\Coffe Shop CRUD\\staticCRUD\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -541,5 +541,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1900",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json."
+    }
+  ]
 }

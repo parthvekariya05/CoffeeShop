@@ -5,6 +5,7 @@ using System.Data;
 
 namespace staticCRUD.Controllers
 {
+    [CheckAccess]
     public class CustomerController : Controller
     {
         #region Configurtions
