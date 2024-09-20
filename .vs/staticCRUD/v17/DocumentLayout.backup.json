@@ -1,12 +1,88 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "E:\\Study\\Sem-5\\.NET\\Coffe Shop CRUD\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E517D6A6-D2DC-4196-83D6-4D1B0180E823}|staticCRUD\\staticCRUD.csproj|e:\\study\\sem-5\\.net\\coffe shop crud\\staticcrud\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E517D6A6-D2DC-4196-83D6-4D1B0180E823}|staticCRUD\\staticCRUD.csproj|solutionrelative:staticcrud\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E517D6A6-D2DC-4196-83D6-4D1B0180E823}|staticCRUD\\staticCRUD.csproj|e:\\study\\sem-5\\.net\\coffe shop crud\\staticcrud\\views\\shared\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E517D6A6-D2DC-4196-83D6-4D1B0180E823}|staticCRUD\\staticCRUD.csproj|solutionrelative:staticcrud\\views\\shared\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E517D6A6-D2DC-4196-83D6-4D1B0180E823}|staticCRUD\\staticCRUD.csproj|e:\\study\\sem-5\\.net\\coffe shop crud\\staticcrud\\models\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E517D6A6-D2DC-4196-83D6-4D1B0180E823}|staticCRUD\\staticCRUD.csproj|solutionrelative:staticcrud\\models\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E517D6A6-D2DC-4196-83D6-4D1B0180E823}|staticCRUD\\staticCRUD.csproj|e:\\study\\sem-5\\.net\\coffe shop crud\\staticcrud\\views\\shared\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E517D6A6-D2DC-4196-83D6-4D1B0180E823}|staticCRUD\\staticCRUD.csproj|solutionrelative:staticcrud\\views\\shared\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserModel.cs",
+              "DocumentMoniker": "E:\\Study\\Sem-5\\.NET\\Coffe Shop CRUD\\staticCRUD\\Models\\UserModel.cs",
+              "RelativeDocumentMoniker": "staticCRUD\\Models\\UserModel.cs",
+              "ToolTip": "E:\\Study\\Sem-5\\.NET\\Coffe Shop CRUD\\staticCRUD\\Models\\UserModel.cs",
+              "RelativeToolTip": "staticCRUD\\Models\\UserModel.cs",
+              "ViewState": "AgIAACQAAACAZWZmZkYxwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-20T15:03:44.628Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "E:\\Study\\Sem-5\\.NET\\Coffe Shop CRUD\\staticCRUD\\Views\\Shared\\Login.cshtml",
+              "RelativeDocumentMoniker": "staticCRUD\\Views\\Shared\\Login.cshtml",
+              "ToolTip": "E:\\Study\\Sem-5\\.NET\\Coffe Shop CRUD\\staticCRUD\\Views\\Shared\\Login.cshtml",
+              "RelativeToolTip": "staticCRUD\\Views\\Shared\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-20T14:54:31.19Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "E:\\Study\\Sem-5\\.NET\\Coffe Shop CRUD\\staticCRUD\\Views\\Shared\\Register.cshtml",
+              "RelativeDocumentMoniker": "staticCRUD\\Views\\Shared\\Register.cshtml",
+              "ToolTip": "E:\\Study\\Sem-5\\.NET\\Coffe Shop CRUD\\staticCRUD\\Views\\Shared\\Register.cshtml",
+              "RelativeToolTip": "staticCRUD\\Views\\Shared\\Register.cshtml",
+              "ViewState": "AgIAAB0AAAAAMDMzMzP7vyoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-20T14:51:50.256Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "E:\\Study\\Sem-5\\.NET\\Coffe Shop CRUD\\staticCRUD\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "staticCRUD\\Controllers\\UserController.cs",
+              "ToolTip": "E:\\Study\\Sem-5\\.NET\\Coffe Shop CRUD\\staticCRUD\\Controllers\\UserController.cs*",
+              "RelativeToolTip": "staticCRUD\\Controllers\\UserController.cs*",
+              "ViewState": "AgIAAAkAAABAi5mZmZkpwMQAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-20T14:50:03.875Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
