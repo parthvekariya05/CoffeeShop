@@ -36,33 +36,59 @@
 
                                 <form class="row g-3 needs-validation" asp-controller="User" asp-action="UserRegister" novalidate>
                                     <div class="col-12">
-                                        <label for="yourName" class="form-label">UserName</label>
-                                        <input type="text" asp-for="UserName" class="form-control" id="yourName">
-                                        <span class="text-danger" asp-validation-for="UserName"></span>
+                                        <label for="yourUsername" class="form-label">Username</label>
+                                        <div class="input-group has-validation">
+                                            <span class="input-group-text">
+                                                <i class="bi bi-person"></i>
+                                            </span>
+                                            <input type="text" asp-for="UserName" class="form-control" id="yourUsername">
+                                            <span asp-validation-for="UserName" class="text-danger"></span>
+                                        </div>
                                     </div>
 
                                     <div class="col-12">
-                                        <label for="yourEmail" class="form-label">Password</label>
-                                        <input type="password" asp-for="Password" class="form-control" id="yourEmail">
-                                        <span class="text-danger" asp-validation-for="Password"></span>
+                                        <label for="yourPassword" class="form-label">Password</label>
+                                        <div class="input-group has-validation">
+                                            <span class="input-group-text">
+                                                <i class="bi bi-lock"></i>
+                                            </span>
+                                            <input type="password" asp-for="Password" class="form-control" id="yourPassword">
+                                            <span asp-validation-for="Password" class="text-danger"></span>
+                                        </div>
                                     </div>
 
                                     <div class="col-12">
                                         <label for="yourEmail" class="form-label">Email</label>
-                                        <input type="email" asp-for="Email" class="form-control" id="yourEmail">
-                                        <span class="text-danger" asp-validation-for="Email"></span>
+                                        <div class="input-group has-validation">
+                                                <span class="input-group-text">
+                                                    <i class="bi bi-envelope"></i>
+                                                </span>
+                                                <input type="email" asp-for="Email" class="form-control" id="yourEmail">
+                                                <span class="text-danger" asp-validation-for="Email"></span>                                                
+                                        </div>
                                     </div>
 
                                     <div class="col-12">
                                         <label for="yourEmail" class="form-label">Mobile Number</label>
-                                        <input type="number" asp-for="MobileNo" class="form-control" id="yourEmail">
-                                        <span class="text-danger" asp-validation-for="MobileNo"></span>
+                                        <div class="input-group has-validation">
+                                                <span class="input-group-text">
+                                                    <i class="bi bi-phone"></i>
+                                                </span>
+                                            <input type="number" asp-for="MobileNo" class="form-control" id="yourEmail">
+                                            <span class="text-danger" asp-validation-for="MobileNo"></span>
+                                        </div>
                                     </div>
 
                                     <div class="col-12">
                                         <label for="yourEmail" class="form-label">Address</label>
-                                        <input type="text" asp-for="Address" class="form-control" id="yourEmail">
-                                        <span class="text-danger" asp-validation-for="Address"></span>
+                                        <div class="input-group has-validation">
+                                                <span class="input-group-text">
+                                                <i class="bi bi-geo-alt"></i>
+                                                </span>
+                                            <textarea class="form-control" asp-for="Address" name="Address" id="yourEmail"></textarea>                                                                                            
+                                            <span class="text-danger" asp-validation-for="Address"></span>
+                                        </div>
+                                       
                                     </div>
 
                                     <div class="col-12">

@@ -34,11 +34,12 @@
                                 </div>
 
                                 <form class="row g-3 needs-validation" asp-action="UserLogin" asp-controller="User">
-
                                     <div class="col-12">
                                         <label for="yourUsername" class="form-label">Username</label>
                                         <div class="input-group has-validation">
-                                            <span class="input-group-text" id="inputGroupPrepend"></span>
+                                            <span class="input-group-text">
+                                                <i class="bi bi-person"></i>
+                                            </span>
                                             <input type="text" asp-for="UserName" class="form-control" id="yourUsername">
                                             <span asp-validation-for="UserName" class="text-danger"></span>
                                         </div>
@@ -46,18 +47,20 @@
 
                                     <div class="col-12">
                                         <label for="yourPassword" class="form-label">Password</label>
+                                        <div class="input-group has-validation">
+                                        <span class="input-group-text">
+                                            <i class="bi bi-lock"></i>
+                                        </span>
                                         <input type="password" asp-for="Password" class="form-control" id="yourPassword">
                                         <span asp-validation-for="Password" class="text-danger"></span>
                                     </div>
-
-                                    <div class="col-12">
+                                    <div class="col-12 pt-2">
                                         <div class="form-check">
                                             <input class="form-check-input" type="checkbox" name="remember" value="true" id="rememberMe">
                                             <label class="form-check-label" for="rememberMe">Remember me</label>
-
                                         </div>
                                     </div>
-                                    <div class="col-12">
+                                    <div class="col-12 pt-3">
                                         <button class="btn btn-primary w-100" type="submit">Login</button>
                                     </div>
                                     <div class="col-12">
