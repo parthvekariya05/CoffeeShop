@@ -1,3 +1,6 @@
+
+CREATE DATABASE CoffeShop
+
 -- Create the User table
 CREATE TABLE [dbo].[User] (
     [UserID] INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
@@ -802,4 +805,341 @@ SELECT	@ProductCount as ProductCount,
 		@OrderDetailCount as OrderDetailCount,
 		@BillCount as BillCount,
 		@CustomerCount as CutomerCount
+GO
+
+-- User Login
+CREATE PROCEDURE [dbo].[PR_User_Login]
+    @UserName NVARCHAR(50),
+    @Password NVARCHAR(50)
+AS
+BEGIN
+    SELECT 
+        [dbo].[User].[UserID], 
+        [dbo].[User].[UserName], 
+        [dbo].[User].[MobileNo], 
+        [dbo].[User].[Email], 
+        [dbo].[User].[Password],
+        [dbo].[User].[Address]
+    FROM 
+        [dbo].[User] 
+    WHERE 
+        [dbo].[User].[UserName] = @UserName 
+        AND [dbo].[User].[Password] = @Password;
+END
+
+--User Register
+CREATE PROCEDURE [dbo].[PR_User_Register]
+    @UserName NVARCHAR(50),
+    @Password NVARCHAR(50),
+    @Email NVARCHAR(500),
+    @MobileNo VARCHAR(50),
+    @Address VARCHAR(50)
+AS
+BEGIN
+    INSERT INTO [dbo].[User]
+    (
+        [UserName],
+        [Password],
+        [Email],
+        [MobileNo],
+        [Address]
+    )
+    VALUES
+    (
+        @UserName,
+        @Password,
+        @Email,
+        @MobileNo,
+        @Address
+    );
+END
+
+
+--SEM :- 6
+CREATE TABLE Country (
+    CountryID INT PRIMARY KEY IDENTITY(1,1),
+    CountryName NVARCHAR(100) NOT NULL,
+    CountryCode NVARCHAR(10) NOT NULL,
+    CreatedDate DATETIME NOT NULL DEFAULT GETDATE(),
+    ModifiedDate DATETIME NULL
+);
+CREATE TABLE State (
+    StateID INT PRIMARY KEY IDENTITY(1,1),
+    CountryID INT NOT NULL,
+    StateName NVARCHAR(100) NOT NULL,
+    StateCode NVARCHAR(10),
+    CreatedDate DATETIME NOT NULL DEFAULT GETDATE(),
+    ModifiedDate DATETIME NULL,
+    FOREIGN KEY (CountryID) REFERENCES Country(CountryID)
+);
+CREATE TABLE City (
+    CityID INT PRIMARY KEY IDENTITY(1,1),
+    StateID INT NOT NULL,
+    CountryID INT NOT NULL,
+    CityName NVARCHAR(100) NOT NULL,
+    CityCode NVARCHAR(10),
+    CreatedDate DATETIME NOT NULL DEFAULT GETDATE(),
+    ModifiedDate DATETIME NULL,
+    FOREIGN KEY (StateID) REFERENCES State(StateID),
+    FOREIGN KEY (CountryID) REFERENCES Country(CountryID)
+);
+
+INSERT INTO Country (CountryName, CountryCode, CreatedDate) VALUES
+('United States', 'US', GETDATE()),
+('India', 'IN', GETDATE()),
+('Australia', 'AU', GETDATE()),
+('Canada', 'CA', GETDATE()),
+('United Kingdom', 'UK', GETDATE()),
+('Germany', 'DE', GETDATE()),
+('France', 'FR', GETDATE()),
+('Japan', 'JP', GETDATE()),
+('China', 'CN', GETDATE()),
+('Brazil', 'BR', GETDATE());
+
+INSERT INTO State (StateName, StateCode, CountryID, CreatedDate) VALUES
+('California', 'CA', 1, GETDATE()),
+('Texas', 'TX', 1, GETDATE()),
+('Gujarat', 'GJ', 2, GETDATE()),
+('Maharashtra', 'MH', 2, GETDATE()),
+('New South Wales', 'NSW', 3, GETDATE()),
+('Victoria', 'VIC', 3, GETDATE()),
+('Ontario', 'ON', 4, GETDATE()),
+('Quebec', 'QC', 4, GETDATE()),
+('England', 'ENG', 5, GETDATE()),
+('Scotland', 'SCT', 5, GETDATE());
+
+INSERT INTO City (CityName, CityCode, StateID, CountryID, CreatedDate) VALUES
+('Los Angeles', 'LA', 1, 1, GETDATE()),
+('Houston', 'HOU', 2, 1, GETDATE()),
+('Ahmedabad', 'AMD', 3, 2, GETDATE()),
+('Mumbai', 'MUM', 4, 2, GETDATE()),
+('Sydney', 'SYD', 5, 3, GETDATE()),
+('Melbourne', 'MEL', 6, 3, GETDATE()),
+('Toronto', 'TOR', 7, 4, GETDATE()),
+('Montreal', 'MTL', 8, 4, GETDATE()),
+('London', 'LDN', 9, 5, GETDATE()),
+('Edinburgh', 'EDI', 10, 5, GETDATE());
+
+--CITY 
+
+Create PROCEDURE [dbo].[PR_LOC_City_SelectAll]
+AS 
+SELECT
+		[dbo].[City].[CityID],
+		[dbo].[City].[StateID],
+		[dbo].[Country].CountryID,
+		[dbo].[Country].[CountryName],
+		[dbo].[State].[StateName],
+		[dbo].[State].[StateCode],
+		[dbo].[City].[CreatedDate],
+		[dbo].[City].[ModifiedDate],
+		[dbo].[City].[CityName],
+		[dbo].[City].[CityCode]
+		
+FROM [dbo].[City]
+LEFT OUTER JOIN [dbo].[State]
+ON [dbo].[State].[StateID] = [dbo].[City].[StateID]
+LEFT OUTER JOIN [dbo].[Country]
+ON [dbo].[Country].[CountryID] = [dbo].[State].[CountryID]
+
+CREATE PROCEDURE PR_LOC_City_SelectByPK
+    @CityID INT
+AS
+BEGIN
+    SELECT CityID, CityName, StateID, CountryID, CityCode
+    FROM City
+    WHERE CityID = @CityID
+END
+
+CREATE PROCEDURE PR_LOC_City_Insert
+    @CityName NVARCHAR(100),
+    @CityCode NVARCHAR(10),
+    @StateID INT,
+    @CountryID INT
+AS
+BEGIN
+    INSERT INTO City (CityName, CityCode, StateID, CountryID, CreatedDate)
+    VALUES (@CityName, @CityCode, @StateID, @CountryID, GETDATE());
+END
+
+CREATE PROCEDURE PR_LOC_City_Update
+    @CityID INT,
+    @CityName NVARCHAR(100),
+    @CityCode NVARCHAR(10),
+    @StateID INT,
+    @CountryID INT
+AS
+BEGIN
+    UPDATE City
+    SET CityName = @CityName,
+        CityCode = @CityCode,
+        StateID = @StateID,
+        CountryID = @CountryID,
+        ModifiedDate = GETDATE()
+    WHERE CityID = @CityID;
+END
+
+CREATE PROCEDURE PR_LOC_City_Delete
+    @CityID INT
+AS
+BEGIN
+    DELETE FROM City
+    WHERE CityID = @CityID
+END
+
+--Countries
+CREATE Or Alter PROCEDURE PR_City_SelectAll
+AS
+BEGIN
+    SELECT CountryID, CityName, CountryCode, CreatedDate, ModifiedDate
+    FROM Country;
+END;
+
+
+CREATE PROCEDURE PR_City_SelectById
+    @CountryID INT
+AS
+BEGIN
+    SELECT CountryID, CountryName, CountryCode, CreatedDate, ModifiedDate
+    FROM Country
+    WHERE CountryID = @CountryID;
+END;
+
+CREATE PROCEDURE PR_City_Insert
+    @CountryName NVARCHAR(100),
+    @CountryCode NVARCHAR(10)
+AS
+BEGIN
+    INSERT INTO Country (CountryName, CountryCode)
+    VALUES (@CountryName, @CountryCode);
+
+    -- Optionally, return the newly inserted CountryID
+    SELECT SCOPE_IDENTITY() AS NewCountryID;
+END;
+
+CREATE PROCEDURE PR_City_Update
+    @CountryID INT,
+    @CountryName NVARCHAR(100),
+    @CountryCode NVARCHAR(10)
+AS
+BEGIN
+    UPDATE Country
+    SET CountryName = @CountryName,
+        CountryCode = @CountryCode,
+        ModifiedDate = GETDATE()
+    WHERE CountryID = @CountryID;
+END;
+
+CREATE PROCEDURE PR_City_Delete
+    @CountryID INT
+AS
+BEGIN
+    DELETE FROM Country
+    WHERE CountryID = @CountryID;
+END;
+
+--state
+CREATE PROCEDURE PR_State_SelectAll
+AS
+BEGIN
+    SELECT 
+        StateID, 
+        CountryID, 
+        StateName, 
+        StateCode, 
+        CreatedDate, 
+        ModifiedDate
+    FROM 
+        State;
+END;
+GO
+
+CREATE PROCEDURE PR_State_SelectById
+    @StateID INT
+AS
+BEGIN
+    SELECT 
+        StateID, 
+        CountryID, 
+        StateName, 
+        StateCode, 
+        CreatedDate, 
+        ModifiedDate
+    FROM 
+        State
+    WHERE 
+        StateID = @StateID;
+END;
+GO
+
+CREATE PROCEDURE PR_State_Insert
+    @CountryID INT,
+    @StateName NVARCHAR(100),
+    @StateCode NVARCHAR(10)
+AS
+BEGIN
+    INSERT INTO State (CountryID, StateName, StateCode, CreatedDate)
+    VALUES (@CountryID, @StateName, @StateCode, GETDATE());
+
+    SELECT SCOPE_IDENTITY() AS NewStateID; -- Returns the ID of the newly inserted state
+END;
+GO
+
+CREATE PROCEDURE PR_State_Update
+    @StateID INT,
+    @CountryID INT,
+    @StateName NVARCHAR(100),
+    @StateCode NVARCHAR(10)
+AS
+BEGIN
+    UPDATE State
+    SET 
+        CountryID = @CountryID,
+        StateName = @StateName,
+        StateCode = @StateCode,
+        ModifiedDate = GETDATE()
+    WHERE 
+        StateID = @StateID;
+
+    SELECT @@ROWCOUNT AS RowsAffected; -- Returns the number of rows updated
+END;
+GO
+
+CREATE PROCEDURE PR_State_Delete
+    @StateID INT
+AS
+BEGIN
+    DELETE FROM State
+    WHERE 
+        StateID = @StateID;
+
+    SELECT @@ROWCOUNT AS RowsAffected; -- Returns the number of rows deleted
+END;
+GO
+--state DropDown
+GO
+CREATE OR ALTER PROCEDURE [dbo].[PR_state_DropDown]
+@CountryID int
+AS
+BEGIN
+   SELECT 
+		[dbo].[State].[StateID],
+		[dbo].[State].[StateName]
+   FROM 
+		[dbo].[State]
+   where
+		[State].CountryID=@CountryID
+END
+GO
+----Country DropDown
+GO
+CREATE OR ALTER PROCEDURE [dbo].[PR_Country_DropDown]
+AS
+BEGIN
+   SELECT 
+		[dbo].[Country].[CountryID],
+		[dbo].[Country].[CountryName]
+   FROM 
+		[dbo].[Country]
+END
 GO

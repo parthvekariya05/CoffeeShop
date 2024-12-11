@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "E:\\Study\\Sem-5\\.NET\\Coffe Shop CRUD\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E517D6A6-D2DC-4196-83D6-4D1B0180E823}|staticCRUD\\staticCRUD.csproj|e:\\study\\sem-5\\.net\\coffe shop crud\\staticcrud\\views\\shared\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E517D6A6-D2DC-4196-83D6-4D1B0180E823}|staticCRUD\\staticCRUD.csproj|solutionrelative:staticcrud\\views\\shared\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E517D6A6-D2DC-4196-83D6-4D1B0180E823}|staticCRUD\\staticCRUD.csproj|e:\\study\\sem-5\\.net\\coffe shop crud\\staticcrud\\helper\\urlencryptor .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E517D6A6-D2DC-4196-83D6-4D1B0180E823}|staticCRUD\\staticCRUD.csproj|solutionrelative:staticcrud\\helper\\urlencryptor .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Register.cshtml",
-              "DocumentMoniker": "E:\\Study\\Sem-5\\.NET\\Coffe Shop CRUD\\staticCRUD\\Views\\Shared\\Register.cshtml",
-              "RelativeDocumentMoniker": "staticCRUD\\Views\\Shared\\Register.cshtml",
-              "ToolTip": "E:\\Study\\Sem-5\\.NET\\Coffe Shop CRUD\\staticCRUD\\Views\\Shared\\Register.cshtml*",
-              "RelativeToolTip": "staticCRUD\\Views\\Shared\\Register.cshtml*",
-              "ViewState": "AgIAAEoAAAAAAAAAAAAmwFkAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-23T05:37:21.139Z",
+              "Title": "UrlEncryptor .cs",
+              "DocumentMoniker": "E:\\Study\\Sem-5\\.NET\\Coffe Shop CRUD\\staticCRUD\\Helper\\UrlEncryptor .cs",
+              "RelativeDocumentMoniker": "staticCRUD\\Helper\\UrlEncryptor .cs",
+              "ToolTip": "E:\\Study\\Sem-5\\.NET\\Coffe Shop CRUD\\staticCRUD\\Helper\\UrlEncryptor .cs",
+              "RelativeToolTip": "staticCRUD\\Helper\\UrlEncryptor .cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T15:02:35.502Z",
               "EditorCaption": ""
             }
           ]

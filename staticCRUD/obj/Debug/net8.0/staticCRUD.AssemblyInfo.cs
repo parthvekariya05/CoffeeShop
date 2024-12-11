@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("staticCRUD")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3fbee9b90500f9ee98f8562e34970126fba84383")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+744241e410e328a0de6179052f9034038d19e190")]
 [assembly: System.Reflection.AssemblyProductAttribute("staticCRUD")]
 [assembly: System.Reflection.AssemblyTitleAttribute("staticCRUD")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

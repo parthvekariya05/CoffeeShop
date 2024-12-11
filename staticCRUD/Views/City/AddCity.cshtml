@@ -1,0 +1,99 @@
+﻿ @model CityModel
+
+<form method="post" asp-controller="City" asp-action="Save">
+    <div class="container">
+        <h3 class="text-center text-primary text-decoration-underline fw-bold">City Form</h3>
+        <div class="form-group">
+            <input asp-for="CityID" class="form-control col" type="hidden" value="@Model.CityID" />
+              
+            <label class="col-2" asp-for="CountryID">Country Name<span class="text-danger">*</span></label>
+            <select class="form-control col" asp-for="CountryID" >
+               
+                    
+                    @foreach (var country in ViewBag.CountryList)
+                    {
+                    <option value="@country.CountryID">
+                            @country.CountryName
+                    </option>
+                    }
+                
+            </select>
+            
+            <br />
+
+            <label class="col-2" asp-for="StateID">State Name<span class="text-danger">*</span></label>
+            <select class="form-control col" asp-for="StateID">                           
+                    @if (ViewBag.StateList != null)
+                    {
+                        foreach (var state in
+                        ViewBag.StateList)
+                        {
+                            if (state.StateID == Model.StateID)
+                            {
+                            <option value="@state.StateID">@state.StateName</option>
+                            }
+                            else
+                            {
+                            <option value="@state.StateID">@state.StateName</option>
+                            }
+                        }
+                    }
+               
+            </select>
+            
+            <br />            
+
+            <label>City Name<span class="text-danger">*</span></label>
+            <input type="text" class="form-control" asp-for="CityName" name="CityName" placeholder="Enter City Name" />
+            <span asp-validation-for="CityName" class="text-danger"></span>
+            <br />
+
+            <label>City Code<span class="text-danger">*</span></label>
+            <textarea class="form-control" asp-for="CityCode" name="Citycode" placeholder="Enter City Code"></textarea>
+            <span asp-validation-for="CityCode" class="text-danger"></span>
+            <br />         
+
+            <a class="btn btn-secondary" asp-controller="City" asp-action="SelectAll">Back</a>
+            <button class="btn btn-primary ms-3 ">Submit</button>
+        </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        $(document).ready(function () {
+            $("#CountryID").change(function () {
+                var countryId = $(this).val();
+                if (countryId) {
+                    $.ajax({
+                        url: '@Url.Action("GetStatesByCountry", "City")',
+                        type: "POST", // Changed to POST
+                        data: { CountryID: countryId }, // Use 'CountryID' to match controller
+                        success: function (data) {
+                            $("#StateID")
+                                .empty()
+                                .append('<option value="">Select State</option>');
+                            $.each(data, function (i, state) {
+                                $("#StateID").append(
+                                    '<option value="' +
+                                    state.stateID +
+                                    '">' +
+                                    state.stateName +
+                                    "</option>"
+                                );
+                            });
+                            console.log(state.stateID);
+                        },
+                        error: function (xhr, status, error) {
+                            console.error(error);
+                        },
+                    });
+                } else {
+                    $("#StateID").empty().append('<option value="">Select State</option>');
+                }
+            });
+        });
+    </script>
+}
